@@ -45,4 +45,10 @@ export class MediaService {
     return this.http.post(this.apiUrl + '/media', fd, options);
   }
 
+  getNew() {
+    return this.http.get(this.apiUrl + '/media?start=1&limit=50');
+  }
+
 }
+
+
