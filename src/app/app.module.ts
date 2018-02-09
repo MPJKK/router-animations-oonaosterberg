@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 
@@ -14,7 +14,8 @@ import {MediaService} from './services/media.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {ThumbnailPipe} from './pipes/thumbnail.pipe';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {fadeAnimation} from './fade.animation';
 
 @NgModule({
   declarations: [
@@ -25,16 +26,18 @@ import {ThumbnailPipe} from './pipes/thumbnail.pipe';
     LoginComponent,
     LogoutComponent,
     UploadComponent,
-      ThumbnailPipe
+    ThumbnailPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [MediaService],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {
 }
